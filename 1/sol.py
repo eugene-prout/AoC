@@ -1,8 +1,6 @@
 
 with open("input.txt", 'r') as f:
-    content = f.readlines()
-
-content = [int(x.strip()) for x in content]
+    content = [int(x.strip()) for x in f.readlines()]
 
 for i, one in enumerate(content):
     for j, two in enumerate(content[i:]):
