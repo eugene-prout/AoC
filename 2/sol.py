@@ -18,7 +18,6 @@ def part2():
     counter = 0
     for line in content:
         positions = [int(x)-1 for x in line[0].split("-")]
-        
         if sum([line[1][0] == line[2][index] for index in positions]) == 1:
             counter += 1
 
