@@ -3,13 +3,7 @@ def part1():
     with open("input.txt", 'r') as f:
         content = [x.strip().split() for x in f.readlines()]
 
-    counter = 0
-    for line in content:
-        lower, upper = [int(x) for x in line[0].split("-")]
-        if (line[2].count(line[1][0]) in range(lower, upper+1)):
-            counter += 1
-
-    print(counter)
+    print(len(list(filter(lambda line: (int(line[0].split("-")[0]) <= line[2].count(line[1][0]) <= int(line[0].split("-")[1])), content))))
 
 def part2():
     with open("input.txt", 'r') as f:
