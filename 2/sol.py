@@ -15,10 +15,4 @@ def part2():
     with open("input.txt", 'r') as f:
         content = [x.strip().split() for x in f.readlines()]
 
-    counter = 0
-    for line in content:
-        positions = [int(x)-1 for x in line[0].split("-")]
-        if sum([line[1][0] == line[2][index] for index in positions]) == 1:
-            counter += 1
-
-    print(counter)
+    print(len(list(filter(lambda line: sum([line[1][0] == line[2][index] for index in [int(x)-1 for x in line[0].split("-")]]) == 1, content))))
